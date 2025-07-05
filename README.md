@@ -1,210 +1,188 @@
-# Clan War Tracker v1.1
+# Clan War Tracker v1.2 - Enhanced Edition
 
-A desktop application for tracking 2-week clan wars with participant management, attendance tracking, prize pool distribution, and roster management features.
+A powerful desktop application for tracking 2-week clan wars with advanced prize distribution, participant management, and roster organization.
 
-## New in Version 1.1
-- ✅ **Fixed Date Alignment**: Checkboxes now properly align with date headers
-- ✅ **Edit Dates Feature**: Modify war period dates with custom date picker
-- ✅ **Reset Dates**: Quick reset to start from today's date
-- ✅ **Improved Grid Layout**: Better spacing and alignment throughout
-- ✅ **Enhanced Scrolling**: Both horizontal and vertical scrolling support
+## 🆕 What's New in Version 1.2
 
-## Features
+### 🏆 Prize Picker System
+- **Ranked Prize Distribution**: Set specific amounts for 1st, 2nd, 3rd place, etc.
+- **Customizable Prize Structure**: Modify any prize amount (e.g., 1st place: $400,000)
+- **Dynamic Ranking**: Add or remove prize ranks as needed
+- **Automatic Participant Ranking**: Based on attendance days with tie handling
+
+### 🎨 Enhanced User Interface
+- **Modern Design**: Contemporary styling with improved colors and typography
+- **Better Scrollbars**: More visible and easier-to-use scrollbars throughout
+- **Resizable Sections**: Drag dividers to customize your workspace layout
+- **Visual Icons**: Emoji icons for better navigation and visual appeal
+
+### 📏 Flexible Layout
+- **Expandable Panels**: Resize participant, prize, and attendance sections
+- **Customizable Workspace**: Adjust panel sizes to your preferences
+- **Responsive Design**: Better handling of different screen sizes
+
+## Core Features
 
 ### Clan War Tracking
-- **Participant Management**: Add and remove participants easily
-- **14-Day Attendance Grid**: Visual tracking with checkboxes for each day
-- **Prize Pool Management**: Enter total prize amount for distribution
-- **Automatic Calculations**: Calculate payouts based on attendance
-- **Data Persistence**: Save and load war data to/from JSON files
-- **Export Results**: Export calculation results to text files
+- **Participant Management**: Add/remove participants with enhanced interface
+- **14-Day Attendance Grid**: Visual tracking with properly aligned checkboxes
+- **Dual Prize Modes**: Choose between equal distribution or ranked prizes
+- **Advanced Calculations**: Detailed payout calculations with rankings
+- **Data Persistence**: Save/load with support for new prize features
+
+### Prize Distribution Modes
+
+#### Equal Distribution Mode
+- Enter total prize pool amount
+- Automatic division based on attendance days
+- Fair distribution: (Total Pool ÷ Total Attendance Days) × Individual Days
+
+#### Ranked Prize Mode
+- Set specific amounts for each rank (1st, 2nd, 3rd, etc.)
+- Participants automatically ranked by attendance
+- Customizable prize structure with add/remove ranks
+- Handles ties appropriately
 
 ### Roster Management
 - **Squad Creation**: Create multiple squads with custom names
-- **Member Assignment**: Assign participants to different squads
-- **Squad Management**: Rename and delete squads as needed
-- **Visual Organization**: Clear display of squad compositions
+- **Member Assignment**: Drag-and-drop style assignment interface
+- **Squad Organization**: Visual management of team compositions
+- **Enhanced UI**: Improved styling and layout
 
-## Installation and Setup
+## Installation
 
-### Option 1: Run from Source (Recommended)
+### Quick Setup (Windows)
+1. Download and extract the application files
+2. Install Python 3.7+ (if not already installed)
+3. Double-click `create_executable.bat` to create ClanWarTracker.exe
+4. Run the executable - no Python needed after this step!
 
-1. **Install Python 3.7 or higher**
-   - Download from [python.org](https://www.python.org/downloads/)
-   - Make sure to check "Add Python to PATH" during installation
-
-2. **Download the application files**
-   - Download `clan_war_tracker.py` to your desired folder
-
-3. **Install required packages**
-   ```bash
-   pip install tkinter
-   ```
-   Note: tkinter usually comes with Python, but if not available, install it.
-
-4. **Run the application**
-   ```bash
-   python clan_war_tracker.py
-   ```
-
-### Option 2: Create Windows Executable
-
-1. **Install PyInstaller**
-   ```bash
-   pip install pyinstaller
-   ```
-
-2. **Create executable**
-   ```bash
-   pyinstaller --onefile --windowed --name "ClanWarTracker" clan_war_tracker.py
-   ```
-
-3. **Find your executable**
-   - The executable will be created in the `dist` folder
-   - Copy `ClanWarTracker.exe` to your desired location
+### Run with Python
+```bash
+python clan_war_tracker.py
+```
 
 ## How to Use
 
-### Getting Started
+### Setting Up Prize Distribution
 
-1. **Launch the Application**
-   - Run the executable or Python script
-   - The application opens with two tabs: "Clan War Tracker" and "Roster Manager"
+#### For Equal Distribution:
+1. Select "Equal Distribution" in Prize Management
+2. Enter total prize pool amount
+3. Calculate payouts for fair distribution
 
-2. **Add Participants**
-   - In the "Clan War Tracker" tab, enter participant names in the left panel
-   - Click "Add" or press Enter to add each participant
-   - Participants will appear in the list below
+#### For Ranked Prizes:
+1. Select "Ranked Prizes" in Prize Management
+2. Modify prize amounts for each rank:
+   - 1st Place: $400,000 (default)
+   - 2nd Place: $200,000 (default)
+   - 3rd Place: $100,000 (default)
+   - etc.
+3. Use "Add Rank" or "Remove Last" to adjust structure
+4. Calculate payouts to see rankings
 
-### Tracking Attendance
+### Managing Participants
+1. **Add Participants**: Enter names in the left panel
+2. **Track Attendance**: Check boxes for each day attended
+3. **View Rankings**: Participants automatically ranked by attendance
+4. **Remove Participants**: Select and remove as needed
 
-1. **View the Attendance Grid**
-   - The right panel shows a 14-day grid with your custom dates
-   - Each row represents a participant
-   - Each column represents a day (showing month/day format)
+### Customizing Layout
+- **Resize Panels**: Drag the dividers between sections
+- **Horizontal Adjustment**: Change left panel vs. attendance grid width
+- **Vertical Adjustment**: Modify participant vs. prize management height
+- **Save Layout**: Panel sizes persist during your session
 
-2. **Manage Dates**
-   - Click "Edit Dates" to customize the war period dates
-   - Use "Reset to Today" to start fresh from today's date
-   - Dates must be in MM/DD/YYYY format
+### Enhanced Navigation
+- **Mouse Wheel Scrolling**: Scroll vertically in attendance grid
+- **Shift + Mouse Wheel**: Scroll horizontally in attendance grid
+- **Enhanced Scrollbars**: Click and drag for precise navigation
+- **Keyboard Support**: Arrow keys work in all list boxes
 
-3. **Mark Attendance**
-   - Check the boxes for days when participants attend
-   - The "Total" column automatically updates with attendance count
-   - Changes are saved automatically
+## Prize Distribution Examples
 
-### Prize Distribution
+### Ranked Prize Example
+```
+1st Place: John Smith    14 days  $400,000
+2nd Place: Jane Doe      13 days  $200,000
+3rd Place: Bob Wilson    12 days  $100,000
+4th Place: Alice Brown   11 days   $50,000
+5th Place: Mike Davis    10 days   $25,000
+```
 
-1. **Enter Prize Pool**
-   - In the left panel, enter the total prize amount in the "Prize Pool Total" field
-   - Use numbers only (e.g., 1000 for $1000)
+### Equal Distribution Example
+```
+Total Pool: $1,000,000
+Total Attendance: 50 days
+Value per Day: $20,000
 
-2. **Calculate Payouts**
-   - Click "Calculate Payouts" button at the bottom
-   - The calculation appears in the results area showing:
-     - Total prize pool and attendance days
-     - Value per day attended
-     - Individual payouts for each participant
+John Smith:    14 days  $280,000
+Jane Doe:      13 days  $260,000
+Bob Wilson:    12 days  $240,000
+Alice Brown:   11 days  $220,000
+```
 
-3. **Export Results**
-   - Click "Export Results" to save calculations to a text file
-   - Choose location and filename when prompted
-
-### Managing Rosters
-
-1. **Switch to Roster Manager Tab**
-   - Click the "Roster Manager" tab at the top
-
-2. **Create Squads**
-   - Enter squad name in the left panel (e.g., "Squad 1", "Alpha Team")
-   - Click "Add" to create the squad
-
-3. **Assign Members**
-   - Select a squad from the list on the left
-   - In the right panel, click "Add to Squad" next to available participants
-   - Use "Remove" to take members out of squads
-
-4. **Manage Squads**
-   - Select a squad and click "Rename" to change its name
-   - Click "Delete" to remove a squad entirely
-
-### Saving and Loading Data
-
-1. **Save Your Work**
-   - Click "Save Data" to save all participants, attendance, and squads
-   - Choose a location and filename (saves as .json file)
-
-2. **Load Previous Data**
-   - Click "Load Data" to restore saved information
-   - Select the .json file you previously saved
-   - All data will be restored including attendance and squads
-
-## Tips and Best Practices
-
-### Attendance Tracking
-- Mark attendance daily for best accuracy
-- Double-check attendance before calculating payouts
-- Use the export feature to keep records of each war period
-
-### Prize Distribution
-- Verify the prize pool amount before calculating
-- The system divides the total pool by total attendance days across all participants
-- Each participant receives: (their attendance days) × (prize per day)
+## Advanced Features
 
 ### Data Management
-- Save your data regularly to avoid losing information
-- Use descriptive filenames like "ClanWar_Week1_Jan2025.json"
-- Keep backup copies of important war data
+- **Enhanced Save/Load**: Includes prize picker settings
+- **Export Results**: Detailed formatting with rankings
+- **Backup Support**: JSON format for easy backup and sharing
 
-### Roster Organization
-- Create squads based on your clan's structure
-- Use clear, descriptive names for squads
-- Reassign members as needed for different war strategies
+### Date Management
+- **Custom Date Ranges**: Edit any of the 14 war dates
+- **Date Validation**: Ensures proper MM/DD/YYYY format
+- **Quick Reset**: Reset to start from today's date
+
+### Error Handling
+- **Input Validation**: Prevents invalid data entry
+- **Tie Handling**: Proper ranking for participants with same attendance
+- **Graceful Degradation**: Handles missing or corrupted data
+
+## System Requirements
+
+- **Operating System**: Windows 10/11 (primary), Linux/Mac (with Python)
+- **Memory**: 512MB RAM minimum
+- **Storage**: 100MB for application and data files
+- **Display**: 1200x700 minimum resolution (resizable interface)
+- **Python**: 3.7+ (if running from source)
+
+## Tips for Best Results
+
+### Prize Management
+- **Plan Your Structure**: Decide on prize distribution before the war
+- **Test Calculations**: Use sample data to verify prize amounts
+- **Save Regularly**: Keep backups of your prize configurations
+
+### Layout Optimization
+- **Adjust for Screen Size**: Resize panels to fit your monitor
+- **Participant Focus**: Make participant panel larger for many members
+- **Attendance Focus**: Expand attendance grid for detailed tracking
+
+### Data Organization
+- **Descriptive Filenames**: Use clear names like "ClanWar_Jan2025_Week1.json"
+- **Regular Exports**: Export results after each calculation
+- **Backup Strategy**: Keep multiple saves of important war data
 
 ## Troubleshooting
 
-### Application Won't Start
-- Ensure Python is installed correctly
-- Check that tkinter is available: `python -c "import tkinter"`
-- Try running from command line to see error messages
+### Common Issues
+- **Prize Amounts**: Ensure all prize amounts are positive numbers
+- **Ranking Ties**: Participants with same attendance get same rank
+- **Layout Issues**: Reset panel sizes by restarting the application
+- **Scrolling Problems**: Use enhanced scrollbars if mouse wheel doesn't work
 
-### Display Issues
-- The application requires a minimum screen resolution of 800x600
-- If text appears cut off, try maximizing the window
-- Ensure your system display scaling is set to 100% for best results
+### Performance Tips
+- **Large Participant Lists**: Use scrolling for 20+ participants
+- **Complex Prize Structures**: Limit to reasonable number of ranks
+- **Data Files**: Keep individual war files under 10MB for best performance
 
-### Data Problems
-- If attendance checkboxes don't respond, try removing and re-adding the participant
-- For calculation errors, verify the prize pool is a valid number
-- If save/load fails, check file permissions in the target directory
+## Support and Updates
 
-### Performance
-- The application handles up to 50 participants efficiently
-- For larger groups, consider splitting into multiple war periods
-- Close other applications if the interface becomes slow
-
-## Technical Details
-
-- **Built with**: Python 3.x and tkinter
-- **Data Format**: JSON for save files
-- **Platform**: Windows (primary), Linux/Mac (with Python installed)
-- **Dependencies**: tkinter (usually included with Python)
-
-## Support
-
-For issues or questions:
-1. Check this README for common solutions
-2. Verify your Python installation is working correctly
-3. Ensure all participants are added before marking attendance
-4. Try restarting the application if problems persist
+This enhanced version includes all previous features plus the new prize picker system and improved interface. For questions or issues, refer to the CHANGELOG.md for detailed feature descriptions.
 
 ## Version History
-
-- **v1.0**: Initial release with core functionality
-  - Participant management
-  - 14-day attendance tracking
-  - Prize pool calculation and distribution
-  - Roster management with squads
-  - Save/load functionality
-  - Export capabilities
+- **v1.0**: Initial release with basic functionality
+- **v1.1**: Fixed date alignment and added date modification
+- **v1.2**: Added prize picker system, enhanced GUI, and resizable layout
 
